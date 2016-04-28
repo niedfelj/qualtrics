@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.email         = ["hurst.178@osu.edu"]
 
   spec.summary       = "Qualtrics API Wrapper"
-  spec.description   = "Qualtrics API Wrapper"
   spec.homepage      = "https://www.github.com"
   spec.license       = "MIT"
 
@@ -28,11 +27,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rubyzip", "~> 1.2.0"
+  spec.add_dependency "rubyzip", "~> 1.2"
   spec.add_dependency "faraday", "~> 0.9.2"
   spec.add_dependency "resource_kit", "~> 0.1.5"
   spec.add_dependency "kartograph", "~> 0.2.4"
-  spec.add_dependency "virtus", "~> 1.0.5"
+  spec.add_dependency "virtus", "~> 1.0"
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"

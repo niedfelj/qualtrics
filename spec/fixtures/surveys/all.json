@@ -1,0 +1,17 @@
+{
+    "meta": {
+        "httpStatus": "200 - OK"
+    },
+    "result": {
+        "elements": [
+            {
+                "id": "SV_cIsGvAaJsiHwe5n",
+                "isActive": false,
+                "lastModified": "2016-04-28T14:55:29Z",
+                "name": "Test",
+                "ownerId": "UR_4VGw0TrT6YBP1lz"
+            }
+        ],
+        "nextPage": null
+    }
+}

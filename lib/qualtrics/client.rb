@@ -2,12 +2,11 @@ require 'faraday'
 
 module Qualtrics
   class Client
-    QUALTRICS_API = 'https://osu.az1.qualtrics.com'
-
-    attr_reader :api_token
+    attr_reader :api_token, :data_center_id
 
     def initialize(options = {})
       @api_token = options[:api_token]
+      @data_center_id = options[:data_center_id]
     end
 
     def connection
@@ -49,7 +48,7 @@ module Qualtrics
 
     def connection_options
       {
-        url: QUALTRICS_API,
+        url: "https://#{@data_center_id}.qualtrics.com",
         headers: {
           content_type: 'application/json',
           X_API_TOKEN: api_token

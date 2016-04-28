@@ -9,6 +9,7 @@ module Qualtrics
   autoload :BaseModel,              'qualtrics/models/base_model'
   autoload :Organization,           'qualtrics/models/organization'
   autoload :Survey,                 'qualtrics/models/survey'
+    Survey.autoload :Expiration,    'qualtrics/models/survey/expiration'
 
   # Resources
   autoload :OrganizationResource,   'qualtrics/resources/organization_resource'
@@ -17,4 +18,5 @@ module Qualtrics
   # JSON Maps
   autoload :OrganizationMapping,    'qualtrics/mappings/organization_mapping'
   autoload :SurveyMapping,          'qualtrics/mappings/survey_mapping'
+  autoload :ExpirationMapping,      'qualtrics/mappings/expiration_mapping'
 end

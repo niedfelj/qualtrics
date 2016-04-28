@@ -2,6 +2,8 @@ require 'json'
 
 module Qualtrics
   class SurveyResource < ResourceKit::Resource
+    include ErrorHandlingResourceable
+
     resources do
       action :all, 'GET /API/v3/surveys' do
         handler(200) do |response|

@@ -1,5 +1,7 @@
 module Qualtrics
   class OrganizationResource < ResourceKit::Resource
+    include ErrorHandlingResourceable
+
     resources do
       action :find do
         path '/API/v3/organizations/:id'

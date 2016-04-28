@@ -29,15 +29,12 @@ RSpec.describe Qualtrics::SurveyResource do
 
   describe '#update' do
     it 'returns the updated survey' do
-      survey = JSON.parse api_fixture('surveys/find')
-      survey['result']['id'] = '123'
-      survey['result']['name'] = 'New Name'
-      response = survey.to_json
-      stub_do_api('/API/v3/surveys/123', :put).to_return(body: nil)
-      stub_do_api('/API/v3/surveys/123', :get).to_return(body: response)
+      survey = api_fixture('surveys/find')
+      object = Qualtrics::SurveyMapping.extract_single(survey, :read)
+      request = stub_do_api('/API/v3/surveys/123', :put)
+      resource.update(object, id: '123')
 
-      expected_record = Qualtrics::SurveyMapping.extract_single(response, :read)
-      expect(resource.update(expected_record, id: '123')).to eq expected_record
+      expect(request).to have_been_made
     end
   end
 

@@ -18,7 +18,7 @@ module Qualtrics
 
       action :update, 'PUT /API/v3/surveys/:id' do
         body { |object| SurveyMapping.representation_for(:update, object) }
-        handler(200) { |response, object| self.find(id: object.id) }
+        handler(200) { |_| true }
       end
 
       action :delete, 'DELETE /API/v3/surveys/:id' do

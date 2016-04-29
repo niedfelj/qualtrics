@@ -1,0 +1,142 @@
+{
+  "result": {
+    "elements": [
+      {
+        "id": "EMD_8wSAjGvi4S1rvH7",
+        "parentDistributionId": null,
+        "ownerId": "UR_1M4aHozEkSxUfCl",
+        "organizationId": "exampleorganization1",
+        "requestStatus": "Done",
+        "requestType": "Invite",
+        "sendDate": "2015-11-17T00:36:42Z",
+        "createdDate": "2015-11-17T00:36:42Z",
+        "modifiedDate": "2015-11-17T00:36:43Z",
+        "headers": {
+          "fromEmail": "apiexample@qualtrics.com",
+          "replyToEmail": "apiexample@qualtrics.com",
+          "fromName": "Api Test",
+          "subject": "Example Subject"
+        },
+        "recipients": {
+          "mailingListId": "ML_01gl1yHFWKSU8y9",
+          "contactId": null,
+          "libraryId": "UR_1M4aHozEkSxUfCl",
+          "sampleId": null
+        },
+        "message": {
+          "libraryId": "UR_1M4aHozEkSxUfCl",
+          "messageId": "MS_0Vdgn7nLGSQBlYN",
+          "messageText": null
+        },
+        "surveyLink": {
+          "surveyId": "SV_0iEUsdE4aB4K0Dj",
+          "expirationDate": "2016-01-16T00:36:42Z",
+          "linkType": "Individual"
+        },
+        "stats": {
+          "sent": 5,
+          "failed": 0,
+          "started": 0,
+          "bounced": 0,
+          "opened": 0,
+          "skipped": 0,
+          "finished": 0,
+          "complaints": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "distributionId": "EMD_a4y9QGA0sGBRzmt",
+        "parentDistributionId": null,
+        "ownerId": "UR_1M4aHozEkSxUfCl",
+        "organizationId": "exampleorganization2",
+        "requestStatus": "Done",
+        "requestType": "Invite",
+        "sendDate": "2015-11-17T00:36:26Z",
+        "createdDate": "2015-11-17T00:36:26Z",
+        "modifiedDate": "2015-11-17T00:36:29Z",
+        "headers": {
+          "fromEmail": "apitest@qualtrics.com",
+          "replyToEmail": "apitest@qualtrics.com",
+          "fromName": "Api Tester",
+          "subject": "Example Subject 2"
+        },
+        "recipient": {
+          "mailingListId": "ML_01gl1yHFWKSU8y9",
+          "contactId": null,
+          "libraryId": "UR_1M4aHozEkSxUfCl",
+          "sampleId": null
+        },
+        "message": {
+          "libraryId": "UR_1M4aHozEkSxUfCl",
+          "messageId": "MS_0Vdgn7nLGSQBlYN",
+          "messageText": null
+        },
+        "surveyLink": {
+          "surveyId": "SV_0iEUsdE4aB4K0Dj",
+          "expirationDate": "2016-01-16T00:36:26Z",
+          "linkType": "Individual"
+        },
+        "stats": {
+          "sent": 5,
+          "failed": 0,
+          "started": 0,
+          "bounced": 0,
+          "opened": 0,
+          "skipped": 0,
+          "finished": 0,
+          "complaints": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "distributionId": "EMD_5yzfr30Fbpnmu8t",
+        "parentDistributionId": "EMD_a4y9QGA0sGBRzmt",
+        "ownerId": "UR_1M4aHozEkSxUfCl",
+        "organizationId": "exampleorganization3",
+        "requestStatus": "Done",
+        "requestType": "Reminder",
+        "sendDate": "2015-11-17T00:36:42Z",
+        "createdDate": "2016-02-16T01:10:30Z",
+        "modifiedDate": "2016-02-16T01:10:33Z",
+        "headers": {
+          "fromEmail": "apitest@qualtrics.com",
+          "replyToEmail": "noreply@qualtrics.com",
+          "fromName": "Api Tester",
+          "subject": "Example Subject"
+        },
+        "recipients": {
+          "mailingListId": null,
+          "contactId": null,
+          "libraryId": null,
+          "sampleId": null
+        },
+        "message": {
+          "libraryId": "UR_1M4aHozEkSxUfCl",
+          "messageId": "MS_0Vdgn7nLGSQBlYN",
+          "messageText": null
+        },
+        "surveyLink": {
+          "surveyId": "SV_0iEUsdE4aB4K0Dj",
+          "expirationDate": null,
+          "linkType": null
+        },
+        "stats": {
+          "sent": 0,
+          "failed": 0,
+          "started": 0,
+          "bounced": 0,
+          "opened": 0,
+          "skipped": 0,
+          "finished": 0,
+          "complaints": 0,
+          "blocked": 0
+        }
+      }
+    ],
+    "nextPage": "https://s.qualtrics.com/API/v3/distributions?surveyId=SV_0iEUsdE4aB4K0Dj&offset=10"
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

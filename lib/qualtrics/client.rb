@@ -26,8 +26,8 @@ module Qualtrics
         # response_exports: ResponseExportsResource,
         # response_imports: ResponseImportsResource,
         library_messages: LibraryMessageResource
-        # distributions: DistributionResource,
-        # mailing_lists: MailingListResource
+        distributions: DistributionResource,
+        mailing_lists: MailingListResource
       }
     end
 

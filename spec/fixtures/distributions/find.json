@@ -1,0 +1,49 @@
+{
+  "result": {
+    "id": "123",
+    "parentDistributionId": null,
+    "ownerId": "UR_1M4aHozEkSxUfCl",
+    "organizationId": "apitest",
+    "requestStatus": "Done",
+    "requestType": "Invite",
+    "sendDate": "2014-02-18T22:57:04Z",
+    "createdDate": null,
+    "modifiedDate": null,
+    "headers": {
+      "fromEmail": null,
+      "replyToEmail": "apitest@qualtrics.com",
+      "fromName": "Api Test",
+      "subject": "flow test"
+    },
+    "recipients": {
+      "mailingListId": "ML_5mUPvxWERUXKCcR",
+      "contactId": null,
+      "libraryId": "UR_1M4aHozEkSxUfCl",
+      "sampleId": null
+    },
+    "message": {
+      "libraryId": "UR_1M4aHozEkSxUfCl",
+      "messageId": "MS_0omZ2GdHvtBiFSt",
+      "messageText": null
+    },
+    "surveyLink": {
+      "surveyId": "SV_0iEUsdE4aB4K0Dj",
+      "expirationDate": "2014-04-19T21:57:04Z",
+      "linkType": "Individual"
+    },
+    "stats": {
+      "sent": 2,
+      "failed": 0,
+      "started": 2,
+      "bounced": 0,
+      "opened": 2,
+      "skipped": 0,
+      "finished": 2,
+      "complaints": 0,
+      "blocked": 0
+    }
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

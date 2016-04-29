@@ -19,7 +19,7 @@ module Qualtrics
       {
         organization: OrganizationResource,
         divisions: DivisionResource,
-        # groups: GroupResource,
+        groups: GroupResource,
         users: UserResource,
         surveys: SurveyResource
         # responses: ResponseResource,

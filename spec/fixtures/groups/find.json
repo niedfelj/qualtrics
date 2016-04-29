@@ -1,0 +1,15 @@
+{
+  "result": {
+    "id": "123",
+    "type": "GT_1234567890AbCdE",
+    "organizationId": "subpoprecords",
+    "divisionId": null,
+    "name": "Band of Horses",
+    "allUsers": null,
+    "creationDate": "2016-03-09T18:25:00Z",
+    "creatorId": "UR_1234567890AbCdE"
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

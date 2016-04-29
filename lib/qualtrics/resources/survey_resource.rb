@@ -1,5 +1,3 @@
-require 'json'
-
 module Qualtrics
   class SurveyResource < ResourceKit::Resource
     include ErrorHandlingResourceable

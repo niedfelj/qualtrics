@@ -1,5 +1,3 @@
-require 'json'
-
 module Qualtrics
   class UserResource < ResourceKit::Resource
     include ErrorHandlingResourceable
@@ -19,8 +17,7 @@ module Qualtrics
       action :create, 'POST /API/v3/users' do
         body { |object| UserMapping.representation_for(:create, object) }
         handler(200) do |response, object|
-          id = JSON.parse(response.body)['result']['id']
-          object.id = id
+          object.id = JSON.parse(response.body)['result']['id']
           object
         end
       end

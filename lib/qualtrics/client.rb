@@ -21,11 +21,11 @@ module Qualtrics
         divisions: DivisionResource,
         groups: GroupResource,
         users: UserResource,
-        surveys: SurveyResource
+        surveys: SurveyResource,
         # responses: ResponseResource,
         # response_exports: ResponseExportsResource,
         # response_imports: ResponseImportsResource,
-        # message_library: MessageLibraryResource,
+        library_messages: LibraryMessageResource
         # distributions: DistributionResource,
         # mailing_lists: MailingListResource
       }

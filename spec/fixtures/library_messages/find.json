@@ -1,0 +1,13 @@
+{
+  "result": {
+    "category": "reminder",
+    "description": "Survey Reminder",
+    "messages": {
+      "en": "Don't forget my survey",
+      "pt": "Não se esqueça de minha pesquisa"
+    }
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

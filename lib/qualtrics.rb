@@ -14,6 +14,7 @@ module Qualtrics
   autoload :Survey,                             'qualtrics/models/survey'
     Survey.autoload :Expiration,                'qualtrics/models/survey/expiration'
   autoload :User,                               'qualtrics/models/user'
+  autoload :LibraryMessage,                     'qualtrics/models/library_message'
 
   # Resources
   autoload :OrganizationResource,               'qualtrics/resources/organization_resource'
@@ -21,6 +22,7 @@ module Qualtrics
   autoload :GroupResource,                      'qualtrics/resources/group_resource'
   autoload :SurveyResource,                     'qualtrics/resources/survey_resource'
   autoload :UserResource,                       'qualtrics/resources/user_resource'
+  autoload :LibraryMessageResource,             'qualtrics/resources/library_message_resource'
 
   # JSON Maps
   autoload :OrganizationMapping,                'qualtrics/mappings/organization_mapping'
@@ -29,6 +31,7 @@ module Qualtrics
   autoload :SurveyMapping,                      'qualtrics/mappings/survey_mapping'
   autoload :ExpirationMapping,                  'qualtrics/mappings/expiration_mapping'
   autoload :UserMapping,                        'qualtrics/mappings/user_mapping'
+  autoload :LibraryMessageMapping,              'qualtrics/mappings/library_message_mapping'
 
   # Utils
   autoload :ErrorHandlingResourceable,          'qualtrics/error_handling_resourceable'

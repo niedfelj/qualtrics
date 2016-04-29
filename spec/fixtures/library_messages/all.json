@@ -1,0 +1,50 @@
+{
+  "result": {
+    "elements": [
+      {
+        "id": "MS_bOuaBBytjILFzuJ",
+        "description": "Api Email Subject Test",
+        "category": "emailSubject"
+      },
+      {
+        "id": "MS_5o5E28wJn7rDhSR",
+        "description": "My SMS Invite Message",
+        "category": "smsInvite"
+      },
+      {
+        "id": "MS_b3KPWsq6PpAnk33",
+        "description": "Validation Message 1",
+        "category": "validation"
+      },
+      {
+        "id": "MS_5nGuAmq0mr5oXYh",
+        "description": "Validation Message 2",
+        "category": "validation"
+      },
+      {
+        "id": "MS_7TH9n0ktV2A8OgZ",
+        "description": "Urgent Invite 1",
+        "category": "invite"
+      },
+      {
+        "id": "MS_2t2hbTmXIEmVh7D",
+        "description": "Urgent Invite 2",
+        "category": "invite"
+      },
+      {
+        "id": "MS_0omZ2GdHvtBiFSt",
+        "description": "General Invite",
+        "category": "invite"
+      },
+      {
+        "id": "MS_3KLeYqzTMSHkSY5",
+        "description": "Long Time Customer Invite",
+        "category": "invite"
+      }
+    ],
+    "nextPage": "https://localhost:9000/API/v3/messages/?pageOffset=10"
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

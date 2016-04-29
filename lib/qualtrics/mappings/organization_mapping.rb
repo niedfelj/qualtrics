@@ -3,8 +3,8 @@ module Qualtrics
     include Kartograph::DSL
 
     kartograph do
-      root_key singular: 'result', scopes: [:read]
       mapping Organization
+      root_key singular: 'result', scopes: [:read]
 
       scoped :read do
         property :id

@@ -18,7 +18,7 @@ module Qualtrics
     def self.resources
       {
         organization: OrganizationResource,
-        # divisions: DivisionResource,
+        divisions: DivisionResource,
         # groups: GroupResource,
         users: UserResource,
         surveys: SurveyResource

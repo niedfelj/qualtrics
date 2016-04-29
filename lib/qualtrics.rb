@@ -1,6 +1,7 @@
 require "qualtrics/version"
 require "resource_kit"
 require "kartograph"
+require "json"
 
 module Qualtrics
   autoload :Client,                             'qualtrics/client'
@@ -8,17 +9,20 @@ module Qualtrics
   # Models
   autoload :BaseModel,                          'qualtrics/models/base_model'
   autoload :Organization,                       'qualtrics/models/organization'
+  autoload :Division,                           'qualtrics/models/division'
   autoload :Survey,                             'qualtrics/models/survey'
     Survey.autoload :Expiration,                'qualtrics/models/survey/expiration'
   autoload :User,                               'qualtrics/models/user'
 
   # Resources
   autoload :OrganizationResource,               'qualtrics/resources/organization_resource'
+  autoload :DivisionResource,                   'qualtrics/resources/division_resource'
   autoload :SurveyResource,                     'qualtrics/resources/survey_resource'
   autoload :UserResource,                       'qualtrics/resources/user_resource'
 
   # JSON Maps
   autoload :OrganizationMapping,                'qualtrics/mappings/organization_mapping'
+  autoload :DivisionMapping,                    'qualtrics/mappings/division_mapping'
   autoload :SurveyMapping,                      'qualtrics/mappings/survey_mapping'
   autoload :ExpirationMapping,                  'qualtrics/mappings/expiration_mapping'
   autoload :UserMapping,                        'qualtrics/mappings/user_mapping'

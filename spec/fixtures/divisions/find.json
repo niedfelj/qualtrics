@@ -1,0 +1,54 @@
+{
+    "result": {
+        "id": "123",
+        "organizationId": "exampleorganization",
+        "creationDate": "2016-02-18T16:09:44Z",
+        "creatorId": "UR_012345678912345",
+        "name": "examplename",
+        "permissions": {
+            "controlPanel": {
+                "accountPermissions": {
+                    "accessApi": {
+                        "state": "off"
+                    },
+                    "accessMailer": {
+                        "state": "on"
+                    }
+                },
+                "organizationPermissions": {
+                    "allowProxyLogins": {
+                        "state": "on"
+                    },
+                    "requireOptOutLink": {
+                        "state": "on"
+                    }
+                },
+                "questionPermissions": {
+                    "captcha": {
+                        "state": "on"
+                    },
+                    "cs": {
+                        "state": "on"
+                    }
+                },
+                "surveyPermissions": {
+                    "activateSurveys": {
+                        "state": "on"
+                    },
+                    "copySurveyQuestions": {
+                        "state": "on"
+                    }
+                }
+            }
+        },
+        "responseCounts": {
+            "auditable": 0,
+            "deleted": 0,
+            "generated": 0
+        },
+        "status": "Active"
+    },
+    "meta": {
+        "httpStatus": "200 - OK"
+    }
+}

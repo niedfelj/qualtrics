@@ -20,7 +20,7 @@ module Qualtrics
         organization: OrganizationResource,
         # divisions: DivisionResource,
         # groups: GroupResource,
-        # users: UserResource,
+        users: UserResource,
         surveys: SurveyResource
         # responses: ResponseResource,
         # response_exports: ResponseExportsResource,

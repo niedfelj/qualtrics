@@ -1,0 +1,628 @@
+{
+    "result": {
+        "id": "12345",
+        "username": "hurst.178@osu.edu#osu",
+        "email": "hurst.178@osu.edu",
+        "firstName": "Nicholas",
+        "lastName": "Hurst",
+        "userType": "UT_9od1enVtTulsEwA",
+        "organizationId": "osu",
+        "divisionId": "DV_ebAsorNWF7UuYux",
+        "language": "en",
+        "accountStatus": "active",
+        "unsubscribed": false,
+        "accountCreationDate": "2016-04-19T02:08:15Z",
+        "accountExpirationDate": null,
+        "passwordLastChangedDate": "2016-04-19T02:08:15Z",
+        "passwordExpirationDate": null,
+        "lastLoginDate": "2016-04-28T23:46:54Z",
+        "permissions": {
+            "controlPanel": {
+                "accountPermissions": {
+                    "omnitureIntegration": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "allowAllMarkup": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "accessPrintedReports": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "allowJavaScript": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "translateSurveysWithGoogle": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useBenchmarks": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useSmsAccessCodes": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "shareSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "accessSharedAddressBook": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useSmsDistribution": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "showLeadGenerator": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "approveSurveys": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "accessMailer": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "tableauWdc": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "approveMailings": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useTickets": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "offlineApp": {
+                        "calculatedState": "on",
+                        "state": "on"
+                    },
+                    "accessApi": {
+                        "calculatedState": "on",
+                        "state": "on"
+                    },
+                    "salesforceIntegration": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useDashboards": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "createSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "accessPolls": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "collaborateOutsideBrand": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "sendSystemMessage": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "panelProviderApi": {
+                        "calculatedState": "on",
+                        "state": "on"
+                    },
+                    "allowNonAccessibleSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useVocalize": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "enablePublicReport": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "exportReportToFile": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    }
+                },
+                "libraryPermissions": {
+                    "manageLibraryFiles": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "managePanelSamples": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useMessages": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageMessages": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageMailingLists": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useSurveyLibrary": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useMailingLists": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageSurveyLibrary": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useLibraryColorGroups": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageQuestionLibrary": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageBlockLibrary": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useSavedLogic": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useBlockLibrary": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageLibraryGraphics": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageLibraryColorGroups": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "usePanelSamples": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useLibraryGraphics": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useQuestionLibrary": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useLibraryFiles": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    }
+                },
+                "questionPermissions": {
+                    "hotSpot": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "captcha": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "meta": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "te": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "gap": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "mc": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "sbs": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "nps": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "heatMap": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "cs": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "slider": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "pgr": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "ro": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "fileUpload": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "dd": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "matrix": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "timing": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "db": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "ss": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "dynamicMatrix": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                },
+                "surveyPermissions": {
+                    "deactivateSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "editResultSets": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "translateSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "activateSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "viewSurveyResults": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "copySurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useScreenouts": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useAeTriggers": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "distributeSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "viewResponseId": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "exportSurveyData": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "copySurveyQuestions": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "deleteSurveyQuestions": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useAdvancedQuotas": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "deleteSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "viewPersonalData": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useAeConjoint": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "createResponseSets": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useCrossTabs": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useReferenceBlocks": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "editSurveyFlow": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "editQuestions": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useSubgroupAnalysis": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useBlocks": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "editSurveys": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "setSurveyOptions": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useTableOfContents": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                }
+            },
+            "contacts": {
+                "accountPermissions": {
+                    "autoResolveDirectoryDuplicates": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "accessPortal": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageDirectory": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "accessPanelManagement": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "managePortal": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                },
+                "panelManagementPermissions": {
+                    "usePanelMemberPortal": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useCampaigns": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "managePanelMemberPortal": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageCampaigns": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "managePanelHealth": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "usePanelHealth": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageIncentives": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useIncentives": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                },
+                "libraryPermissions": {
+                    "useCampaigns": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageMessages": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "managePanelHealth": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useLibraryFiles": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useAutoResolveDuplicates": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageCampaigns": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageVirtualPool": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useMessages": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "usePanelHealth": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useMailingListTriggers": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageIncentives": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useMailingLists": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "usePanelSamples": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useIncentives": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageMailingListTriggers": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "usePanelMemberPortal": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageLibraryFiles": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageLibraryGraphics": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "managePanelSamples": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageMailingLists": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useLibraryGraphics": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "managePanelMemberPortal": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                },
+                "surveyPermissions": {
+                    "viewSurveyResults": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    }
+                }
+            },
+            "siteIntercept": {
+                "libraryPermissions": {
+                    "manageLibraryCreatives": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "manageLibraryGraphics": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "useLibraryCreatives": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useLibraryIntercepts": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "useLibraryGraphics": {
+                        "calculatedState": "on",
+                        "state": "userType"
+                    },
+                    "manageLibraryIntercepts": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                },
+                "accountPermissions": {
+                    "accessSiteIntercept": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "administerSiteIntercept": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                },
+                "siteInterceptPermissions": {
+                    "manageZones": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "createCreative": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    },
+                    "createIntercept": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                },
+                "zonePermissions": {
+                    "editCreative": {
+                        "calculatedState": "off",
+                        "state": "userType"
+                    }
+                }
+            }
+        }
+    },
+    "meta": {
+        "httpStatus": "200 - OK",
+        "notice": "Request proxied. For faster response times, use this host instead: az1.qualtrics.com"
+    }
+}

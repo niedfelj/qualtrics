@@ -1,0 +1,30 @@
+{
+  "result": {
+    "elements": [
+      {
+        "id": "12345",
+        "divisionId": null,
+        "username": "jpicard",
+        "firstName": "Jean-Luc",
+        "lastName": "Picard",
+        "userType": "UT_BRANDADMIN",
+        "email": "jpicard@starfleet.mil",
+        "accountStatus": "active"
+      },
+      {
+        "id": "6789",
+        "divisionId": null,
+        "username": "wriker",
+        "firstName": "William",
+        "lastName": "Riker",
+        "userType": "UT_BRANDADMIN",
+        "email": "wriker@starfleet.mil",
+        "accountStatus": "active"
+      }
+    ],
+    "nextPage": "https://yourdatacenterid.qualtrics.com/API/v3/users?offset=10"
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

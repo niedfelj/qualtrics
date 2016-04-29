@@ -6,9 +6,9 @@ module Qualtrics
       mapping Survey
       root_key singular: 'result', plural: 'elements', scopes: [:read]
 
-      property :name,       scopes: [:read, :update]
-      property :is_active,  scopes: [:read, :update],   key: 'isActive'
-      property :expiration, scopes: [:read, :update] do
+      property :name,       scopes: [:read, :update], optional: true
+      property :is_active,  scopes: [:read, :update], key: 'isActive', optional: true
+      property :expiration, scopes: [:read, :update], optional: true do
         mapping Survey::Expiration
 
         property :start_date, scopes: [:read, :update], key: 'startDate'

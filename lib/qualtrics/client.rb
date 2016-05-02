@@ -22,9 +22,8 @@ module Qualtrics
         groups: GroupResource,
         users: UserResource,
         surveys: SurveyResource,
-        # responses: ResponseResource,
-        # response_exports: ResponseExportsResource,
-        # response_imports: ResponseImportsResource,
+        response_exports: ResponseExportResource,
+        response_imports: ResponseImportsResource,
         library_messages: LibraryMessageResource,
         distributions: DistributionResource,
         mailing_lists: MailingListResource

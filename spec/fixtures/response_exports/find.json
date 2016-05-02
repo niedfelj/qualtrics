@@ -1,0 +1,9 @@
+{
+  "result": {
+    "percentComplete": 25,
+    "file": "https://test.qualtrics.com/API/v3/responseexports/123/file"
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

@@ -1,7 +1,7 @@
-require "qualtrics/version"
-require "resource_kit"
-require "kartograph"
-require "json"
+require 'json'
+require 'kartograph'
+require 'resource_kit'
+require 'qualtrics/version'
 
 module Qualtrics
   autoload :Client,                             'qualtrics/client'
@@ -20,6 +20,7 @@ module Qualtrics
     Distribution.autoload :Message,             'qualtrics/models/distribution/message'
     Distribution.autoload :Recipients,          'qualtrics/models/distribution/recipients'
     Distribution.autoload :SurveyLink,          'qualtrics/models/distribution/survey_link'
+  autoload :ResponseExport,                     'qualtrics/models/response_export'
   autoload :MailingList,                        'qualtrics/models/mailing_list'
     MailingList.autoload :Contact,              'qualtrics/models/mailing_list/contact'
 
@@ -31,6 +32,7 @@ module Qualtrics
   autoload :UserResource,                       'qualtrics/resources/user_resource'
   autoload :LibraryMessageResource,             'qualtrics/resources/library_message_resource'
   autoload :DistributionResource,               'qualtrics/resources/distribution_resource'
+  autoload :ResponseExportResource,             'qualtrics/resources/response_export_resource'
   autoload :MailingListResource,                'qualtrics/resources/mailing_list_resource'
 
   # JSON Maps
@@ -42,6 +44,7 @@ module Qualtrics
   autoload :UserMapping,                        'qualtrics/mappings/user_mapping'
   autoload :LibraryMessageMapping,              'qualtrics/mappings/library_message_mapping'
   autoload :DistributionMapping,                'qualtrics/mappings/distribution_mapping'
+  autoload :ResponseExportMapping,              'qualtrics/mappings/response_export_mapping'
   autoload :MailingListMapping,                 'qualtrics/mappings/mailing_list_mapping'
   autoload :ContactMapping,                     'qualtrics/mappings/contact_mapping'
 

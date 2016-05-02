@@ -1,0 +1,42 @@
+{
+  "result": {
+    "elements": [
+      {
+        "id": "456",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john_doe@email.com",
+        "externalDataReference": null,
+        "embeddedData": {
+          "custom": "Mathematics",
+          "EmbeddedDataB": ""
+        },
+        "language": null,
+        "unsubscribed": false,
+        "responseHistory": [
+          {
+            "responseId": "R_1234567890abcde",
+            "surveyId": "SV_1234567890abcde",
+            "date": "2015-04-09T13:42:51Z",
+            "emailDistributionId": "EMD_1234567890abcde",
+            "finishedSurvey": true
+          }
+        ],
+        "emailHistory": [
+          {
+            "emailDistributionId": "EMD_1234567890abcde",
+            "date": "2015-04-09T13:42:51Z",
+            "type": "Invite",
+            "result": "Success",
+            "surveyId": "SV_1234567890abcde",
+            "read": true
+          }
+        ]
+      }
+    ],
+    "nextPage": "https://yourdatacenter.qualtrics.com/API/v3/mailinglists/ML_1234567890abcde/contacts?skipToken=MLRP_1234567890eeeee"
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

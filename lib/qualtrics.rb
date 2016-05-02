@@ -20,6 +20,8 @@ module Qualtrics
     Distribution.autoload :Message,             'qualtrics/models/distribution/message'
     Distribution.autoload :Recipients,          'qualtrics/models/distribution/recipients'
     Distribution.autoload :SurveyLink,          'qualtrics/models/distribution/survey_link'
+  autoload :MailingList,                        'qualtrics/models/mailing_list'
+    MailingList.autoload :Contact,              'qualtrics/models/mailing_list/contact'
 
   # Resources
   autoload :OrganizationResource,               'qualtrics/resources/organization_resource'
@@ -29,6 +31,7 @@ module Qualtrics
   autoload :UserResource,                       'qualtrics/resources/user_resource'
   autoload :LibraryMessageResource,             'qualtrics/resources/library_message_resource'
   autoload :DistributionResource,               'qualtrics/resources/distribution_resource'
+  autoload :MailingListResource,                'qualtrics/resources/mailing_list_resource'
 
   # JSON Maps
   autoload :OrganizationMapping,                'qualtrics/mappings/organization_mapping'
@@ -39,6 +42,8 @@ module Qualtrics
   autoload :UserMapping,                        'qualtrics/mappings/user_mapping'
   autoload :LibraryMessageMapping,              'qualtrics/mappings/library_message_mapping'
   autoload :DistributionMapping,                'qualtrics/mappings/distribution_mapping'
+  autoload :MailingListMapping,                 'qualtrics/mappings/mailing_list_mapping'
+  autoload :ContactMapping,                     'qualtrics/mappings/contact_mapping'
 
   # Utils
   autoload :ErrorHandlingResourceable,          'qualtrics/error_handling_resourceable'

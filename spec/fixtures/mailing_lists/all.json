@@ -1,0 +1,22 @@
+{
+  "result": {
+    "elements": [
+      {
+        "libraryId": "UR_1234567890AbCd2",
+        "id": "ML_1234567890AbCd1",
+        "name": "Rebel Contacts",
+        "category": "Star Wars - Rebels"
+      },
+      {
+        "libraryId": "UR_1234567890AbCd2",
+        "id": "ML_1234567890AbCd2",
+        "name": "Empire Manifest",
+        "category": "Star Wars - Empire"
+      }
+    ],
+    "nextPage": null
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "result": {
+    "id": "123",
+    "libraryId": "UR_1234567890AbCdE",
+    "name": "Rebel Contacts",
+    "category": "Star Wars - Rebels"
+  },
+  "meta": {
+    "httpStatus": "200 - OK"
+  }
+}

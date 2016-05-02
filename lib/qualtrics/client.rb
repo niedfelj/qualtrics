@@ -23,7 +23,7 @@ module Qualtrics
         users: UserResource,
         surveys: SurveyResource,
         response_exports: ResponseExportResource,
-        response_imports: ResponseImportsResource,
+        response_imports: ResponseImportResource,
         library_messages: LibraryMessageResource,
         distributions: DistributionResource,
         mailing_lists: MailingListResource

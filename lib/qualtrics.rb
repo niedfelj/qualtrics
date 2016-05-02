@@ -33,6 +33,7 @@ module Qualtrics
   autoload :LibraryMessageResource,             'qualtrics/resources/library_message_resource'
   autoload :DistributionResource,               'qualtrics/resources/distribution_resource'
   autoload :ResponseExportResource,             'qualtrics/resources/response_export_resource'
+  autoload :ResponseImportResource,             'qualtrics/resources/response_import_resource'
   autoload :MailingListResource,                'qualtrics/resources/mailing_list_resource'
 
   # JSON Maps

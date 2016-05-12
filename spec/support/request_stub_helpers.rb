@@ -6,4 +6,8 @@ module RequestStubHelpers
   def api_fixture(fixture_name)
     Pathname.new('./spec/fixtures/').join("#{fixture_name}.json").read
   end
+
+  def file_response_fixture(fixture_name)
+    Pathname.new('./spec/fixtures/').join("#{fixture_name}").read
+  end
 end

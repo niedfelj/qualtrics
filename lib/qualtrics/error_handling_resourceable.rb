@@ -1,5 +1,3 @@
-require 'json'
-
 module ErrorHandlingResourceable
   def self.included(base)
     base.send(:resources) do

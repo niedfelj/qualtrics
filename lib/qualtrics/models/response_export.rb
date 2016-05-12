@@ -3,5 +3,50 @@ module Qualtrics
     attribute :id
     attribute :percent_complete
     attribute :file
+
+    # Unzips and maps the serialized responses to a Response object
+    #
+    # @return [Qualtrics::Response]
+    def get_responses
+      unzip_responses(file)
+    end
+
+    private
+
+    # Creates a temporary zip file from api response, and maps the
+    # contents of the file inside to an array of Qualtrics::Response models
+    # TODO: Add CSV support
+    # @return [Qualtrics::Response]
+    def unzip_responses(response_zip)
+      File.open("/tmp/qualtrics_response_export_#{id}.zip", 'wb') { |f| f.write response_zip }
+      responses = ''
+
+      Zip::File.open("/tmp/qualtrics_response_export_#{id}.zip") do |zip|
+        zip.each do |file|
+          case file.name
+          when /.+\.json/
+            responses = create_responses(file.get_input_stream.read, :json)
+          when /.+\.xml/
+            responses = create_responses(file.get_input_stream.read, :xml)
+          else
+            raise Qualtrics::Error.new("Unkown Response Export file type for file: #{file.name}")
+          end
+        end
+      end
+
+      File.delete("/tmp/qualtrics_response_export_#{id}.zip")
+      responses
+    end
+
+    # Sends the serialized responses to the correct mapping function
+    # TODO: Add CSV Mapping
+    # @return [Qualtrics::Response]
+    def create_responses(serialized_responses, f_type)
+      if f_type == :json or f_type == :xml
+        responses = ResponsesMapping.from_json_or_xml(serialized_responses, f_type)
+      end
+
+      responses
+    end
   end
 end

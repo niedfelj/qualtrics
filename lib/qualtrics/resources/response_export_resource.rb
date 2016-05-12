@@ -10,15 +10,20 @@ module Qualtrics
 
     resources do
       action :find, 'GET /API/v3/responseexports/:id' do
-        handler(200) do |response, id|
+        handler(200) do |response, hash|
           resp_exp = ResponseExportMapping.extract_single(response.body, :read)
-          resp_exp.id = id
+          resp_exp.id = hash[:id]
+
+          unless resp_exp.percent_complete < 100
+            resp_exp.file = get_file(id: hash[:id])
+          end
+
           resp_exp
         end
       end
 
       action :create, 'POST /API/v3/responseexports' do
-        body { |survey_id, file_type| { surveyId: survey_id, format: file_type } }
+        body { |hash| { surveyId: hash[:survey_id], format: hash[:file_type] }.to_json }
         handler(200) { |response| JSON.parse(response.body)['result']['id'] }
       end
 

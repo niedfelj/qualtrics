@@ -8,7 +8,6 @@ module Qualtrics
 
       scoped :read do
         property :percent_complete, key: 'percentComplete'
-        property :file
       end
     end
   end

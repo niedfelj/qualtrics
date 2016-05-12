@@ -26,7 +26,7 @@ settings.
 Then to create a client instance:
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 ```
 
 ## Design
@@ -35,7 +35,7 @@ This wrapper uses resources as ways of interacting with the endpoints of the Qua
 The resource action will then return a Ruby object. For surveys:
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.surveys.all
 # => [ Qualtrics::Survey(id: '123', name: 'Your Survey',...) ]
 # or individually...
@@ -46,7 +46,7 @@ client.surveys.find(id: '123')
 Creating and updating are done in a similar fashion:
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 user = Qualtrics::User.new(username: 'username', password: 'hunter2'...)
 client.users.create(user)
 # => Qualtrics::User(id: '123', username: 'username',...)
@@ -57,7 +57,7 @@ client.users.create(user)
 ### Organizations Resource
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.organizations # => Qualtrics::OrganizationResource
 ```
 
@@ -115,7 +115,7 @@ Optional Attributes:
 ### Groups Resource
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.groups # => Qualtrics::GroupResource
 ```
 
@@ -198,7 +198,7 @@ client.groups.delete_user(id: '1233412', user_id: '43426') # => true
 ### Users Resource
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.users # => Qualtrics::UserResource
 ```
 
@@ -275,7 +275,7 @@ client.users.delete(id: '5135124') # => true
 ### Surveys Resource
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.surveys # => Qualtrics::SurveyResource
 ```
 
@@ -323,7 +323,7 @@ client.surveys.delete(id: '1641435') # => true
 ### Library Messages Resource
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.library_messages # => Qualtrics::LibraryMessageResource
 ```
 
@@ -385,7 +385,7 @@ client.library_messages.delete(library_id: '12321', id: '41231') # => true
 ### Distributions Resource
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.distributions # => Qualtrics::DistributionResource
 ```
 
@@ -494,7 +494,7 @@ Required Attributes:
 ### Mailing List Resource
 
 ```ruby
-client = DropletKit::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.distributions # => Qualtrics::DistributionResource
 ```
 

@@ -4,7 +4,10 @@ module Qualtrics
 
     resources do
       action :all, 'GET /API/v3/distributions' do
-        query_keys surveyId: :survey_id
+        query_keys surveyId: :survey_id, mailingListId: :mailing_list_id,
+                   distributionRequestType: :distribution_request_type,
+                   sendStartDate: :send_start_date, sendEndDate: :send_end_date
+
         handler(200) do |response|
           response_body = JSON.parse(response.body)['result'].to_json
           DistributionMapping.extract_collection(response_body, :read)
@@ -12,6 +15,7 @@ module Qualtrics
       end
 
       action :find, 'GET /API/v3/distributions/:id' do
+        query_keys surveyId: :survey_id
         handler(200) { |response| DistributionMapping.extract_single(response.body, :read) }
       end
 

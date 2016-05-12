@@ -632,7 +632,7 @@ Optional Parameters:
 `GET /API/responseexports/:id`
 
 ```ruby
-client.response_exports.find(id: '123') # => Qualtrics::ResponseExports
+client.response_exports.find(id: '123') # => Qualtrics::ResponseExport
 ```
 
 ##### Get File

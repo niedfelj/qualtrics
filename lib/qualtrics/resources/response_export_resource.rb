@@ -3,8 +3,9 @@ module Qualtrics
     include ErrorHandlingResourceable
 
     [:csv, :csv_2013, :xml, :json, :spss].each do |file_type|
-      define_method file_type do |survey_id|
-        create(survey_id: survey_id, file_type: file_type)
+      define_method file_type do |opts|
+        opts[:file_type] = file_type
+        create(opts)
       end
     end
 
@@ -23,7 +24,20 @@ module Qualtrics
       end
 
       action :create, 'POST /API/v3/responseexports' do
-        body { |hash| { surveyId: hash[:survey_id], format: hash[:file_type] }.to_json }
+        body do |hash|
+          params = { surveyId: hash[:survey_id], format: hash[:file_type] }
+          optional_params = [:last_response_id, :start_date, :end_date, :limit,
+                             :included_question_ids, :use_label, :decimal_separator,
+                             :seen_unanswered_record, :use_local_time]
+
+          optional_params.each do |optional_param|
+            key = optional_param.to_s.camelize(:lower).to_sym
+            params[key] = hash[optional_param] if hash.has_key?(optional_param)
+          end
+
+          params.to_json
+        end
+
         handler(200) { |response| JSON.parse(response.body)['result']['id'] }
       end
 

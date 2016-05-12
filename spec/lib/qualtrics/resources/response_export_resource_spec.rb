@@ -22,6 +22,13 @@ RSpec.describe Qualtrics::ResponseExportResource do
 
         expect(resource.send(file_type, survey_id: '123')).to eq '123'
       end
+
+      it "allows for optional params to be passed" do
+        response = api_fixture('response_exports/create')
+        stub_do_api('/API/v3/responseexports', :post).to_return(body: response)
+
+        expect(resource.send(file_type, survey_id: '123', last_response_id: '456')).to eq '123'
+      end
     end
   end
 end

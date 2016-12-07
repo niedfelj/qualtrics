@@ -12,7 +12,26 @@ module Qualtrics
     attribute :headers
     attribute :recipients
     attribute :message
-    attribute :survey_link
+    attribute :distribution_link
     attribute :stats
+
+    ##
+    # Make the model serializeable by ActiveModelSerializer
+    #
+    # @return [OpenStruct]
+    #
+    def self.model_name
+      OpenStruct.new(name: "Qualtrics::Distribution",
+                     klass: self,
+                     singular: "qualtrics_distribution",
+                     plural: "qualtrics_distributions",
+                     element: "distribution",
+                     human: "distribution",
+                     collection: "qualtrics/distributions",
+                     param_key: "qualtrics_distributions",
+                     i18n_key: "qualtrics/distributions",
+                     route_key: "qualtrics_distributions",
+                     singular_route_key: "qualtrics_distribution")
+    end
   end
 end

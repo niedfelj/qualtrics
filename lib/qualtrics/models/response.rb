@@ -4,9 +4,10 @@ module Qualtrics
     attribute :response_set
     attribute :ip_address
     attribute :start_date
-    attribute :recipient_last_name
-    attribute :recipient_first_name
-    attribute :recipient_email
+    attribute :end_date
+    attribute :last_name
+    attribute :first_name
+    attribute :email
     attribute :external_data_reference
     attribute :finished
     attribute :status

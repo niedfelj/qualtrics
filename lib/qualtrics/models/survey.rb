@@ -1,7 +1,5 @@
 module Qualtrics::API
   class Survey < BaseModel
-    include ::ActiveModel::Serialization
-
     attribute :id
     attribute :name
     attribute :owner_id

@@ -48,5 +48,24 @@ module Qualtrics::API
 
       responses
     end
+
+    ##
+    # Make the model serializeable by ActiveModelSerializer
+    #
+    # @return [OpenStruct]
+    #
+    def self.model_name
+      OpenStruct.new(name: "Qualtrics::API::ResponseExport",
+                     klass: self,
+                     singular: "qualtrics_response_export",
+                     plural: "qualtrics_response_exports",
+                     element: "response_exports",
+                     human: "response_export",
+                     collection: "qualtrics/response_exports",
+                     param_key: "qualtrics_response_exports",
+                     i18n_key: "qualtrics/response_exports",
+                     route_key: "qualtrics_response_exports",
+                     singular_route_key: "qualtrics_response_export")
+    end
   end
 end

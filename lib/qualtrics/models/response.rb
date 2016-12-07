@@ -1,5 +1,7 @@
 module Qualtrics::API
   class Response < BaseModel
+    include ::ActiveModel::Serialization
+
     attribute :id
     attribute :response_set
     attribute :ip_address
@@ -15,5 +17,24 @@ module Qualtrics::API
     attribute :location_longitude
     attribute :location_accuracy
     attribute :questions
+
+    ##
+    # Make the model serializeable by ActiveModelSerializer
+    #
+    # @return [OpenStruct]
+    #
+    def self.model_name
+      OpenStruct.new(name: "Qualtrics::API::Response",
+                     klass: self,
+                     singular: "qualtrics_response",
+                     plural: "qualtrics_responses",
+                     element: "responses",
+                     human: "response",
+                     collection: "qualtrics/responses",
+                     param_key: "qualtrics_responses",
+                     i18n_key: "qualtrics/responses",
+                     route_key: "qualtrics_responses",
+                     singular_route_key: "qualtrics_response")
+    end
   end
 end

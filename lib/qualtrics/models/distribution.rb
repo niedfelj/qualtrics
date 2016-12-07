@@ -1,7 +1,5 @@
 module Qualtrics::API
   class Distribution < BaseModel
-    include ::ActiveModel::Serialization
-
     attribute :id
     attribute :parent_distribution_id
     attribute :owner_id

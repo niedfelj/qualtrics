@@ -1,7 +1,5 @@
 module Qualtrics::API
   class MailingList < BaseModel
-    include ::ActiveModel::Serialization
-
     attribute :id
     attribute :library_id
     attribute :name

@@ -3,6 +3,7 @@ require 'json'
 require 'kartograph'
 require 'resource_kit'
 require 'qualtrics/version'
+require 'active_model'
 require 'active_support/all'
 
 module Qualtrics

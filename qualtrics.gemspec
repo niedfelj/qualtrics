@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   # spec.add_dependency "resource_kit", "~> 0.1.5"
   spec.add_dependency "kartograph", "~> 0.2.4"
   spec.add_dependency "virtus", "~> 1.0"
+  spec.add_dependency "activemodel"
   spec.add_dependency "activesupport"
   spec.add_dependency "smarter_csv", "~> 1.1"
 

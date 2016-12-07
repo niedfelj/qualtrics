@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class SurveyMapping
     include Kartograph::DSL
 

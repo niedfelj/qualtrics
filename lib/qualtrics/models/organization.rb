@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Organization < BaseModel
     attribute :id
     attribute :name

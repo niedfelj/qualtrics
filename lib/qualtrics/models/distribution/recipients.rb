@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Distribution::Recipients < BaseModel
     attribute :mailing_list_id
     attribute :contact_id

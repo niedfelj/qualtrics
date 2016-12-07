@@ -26,7 +26,7 @@ settings.
 Then to create a client instance:
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 ```
 
 ## Design
@@ -35,21 +35,21 @@ This wrapper uses resources as ways of interacting with the endpoints of the Qua
 The resource action will then return a Ruby object. For surveys:
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
 client.surveys.all
-# => [ Qualtrics::Survey(id: '123', name: 'Your Survey',...) ]
+# => [ Qualtrics::API::Survey(id: '123', name: 'Your Survey',...) ]
 # or individually...
 client.surveys.find(id: '123')
-# => Qualtrics::Survey(id: '123', name: 'Your Survey',...)
+# => Qualtrics::API::Survey(id: '123', name: 'Your Survey',...)
 ```
 
 Creating and updating are done in a similar fashion:
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
-user = Qualtrics::User.new(username: 'username', password: 'hunter2'...)
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+user = Qualtrics::API::User.new(username: 'username', password: 'hunter2'...)
 client.users.create(user)
-# => Qualtrics::User(id: '123', username: 'username',...)
+# => Qualtrics::API::User(id: '123', username: 'username',...)
 ```
 
 ## All Resources and Actions
@@ -57,8 +57,8 @@ client.users.create(user)
 ### Organizations Resource
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
-client.organizations # => Qualtrics::OrganizationResource
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client.organizations # => Qualtrics::API::OrganizationResource
 ```
 
 #### Supported Actions
@@ -68,7 +68,7 @@ client.organizations # => Qualtrics::OrganizationResource
 `GET /API/v3/organizations/:id`
 
 ```ruby
-client.organizations.find(id: '1234') # => Qualtrics::Organization
+client.organizations.find(id: '1234') # => Qualtrics::API::Organization
 ```
 
 ### Divisions Resource
@@ -78,7 +78,7 @@ client.organizations.find(id: '1234') # => Qualtrics::Organization
 `GET /API/v3/divisions/:id`
 
 ```ruby
-client.divisions.find(id: '1234') # => Qualtrics::Division
+client.divisions.find(id: '1234') # => Qualtrics::API::Division
 ```
 
 ##### Create
@@ -87,7 +87,7 @@ client.divisions.find(id: '1234') # => Qualtrics::Division
 
 ```ruby
 division = Division.new(name: 'division')
-client.divisions.create(division) # => Qualtrics::Division
+client.divisions.create(division) # => Qualtrics::API::Division
 ```
 
 Required Attributes:
@@ -115,8 +115,8 @@ Optional Attributes:
 ### Groups Resource
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
-client.groups # => Qualtrics::GroupResource
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client.groups # => Qualtrics::API::GroupResource
 ```
 
 #### Supported Actions
@@ -126,7 +126,7 @@ client.groups # => Qualtrics::GroupResource
 `GET /API/v3/groups`
 
 ```ruby
-client.groups.all # => [Qualtrics::Group]
+client.groups.all # => [Qualtrics::API::Group]
 ```
 
 ##### Find
@@ -134,7 +134,7 @@ client.groups.all # => [Qualtrics::Group]
 `GET /API/v3/groups/:id`
 
 ```ruby
-client.groups.find(id: '1234') # => Qualtrics::Group
+client.groups.find(id: '1234') # => Qualtrics::API::Group
 ```
 
 ##### Create
@@ -142,8 +142,8 @@ client.groups.find(id: '1234') # => Qualtrics::Group
 `POST /API/v3/groups`
 
 ```ruby
-group = Qualtrics::Group.new(type: '25241', name: 'my group')
-client.groups.create(group) # => Qualtrics::Group
+group = Qualtrics::API::Group.new(type: '25241', name: 'my group')
+client.groups.create(group) # => Qualtrics::API::Group
 ```
 
 Required Attributes:
@@ -198,8 +198,8 @@ client.groups.delete_user(id: '1233412', user_id: '43426') # => true
 ### Users Resource
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
-client.users # => Qualtrics::UserResource
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client.users # => Qualtrics::API::UserResource
 ```
 
 #### Supported Actions
@@ -209,7 +209,7 @@ client.users # => Qualtrics::UserResource
 `GET /API/v3/users`
 
 ```ruby
-client.users.all # => [Qualtrics::User]
+client.users.all # => [Qualtrics::API::User]
 ```
 
 ##### Find
@@ -217,7 +217,7 @@ client.users.all # => [Qualtrics::User]
 `GET /API/v3/users/:id`
 
 ```ruby
-client.users.find(id: '623452') # => Qualtrics::User
+client.users.find(id: '623452') # => Qualtrics::API::User
 ```
 
 ##### Create
@@ -225,8 +225,8 @@ client.users.find(id: '623452') # => Qualtrics::User
 `POST /API/v3/users`
 
 ```ruby
-user = Qualtrics::User.new(username: 'username', password: 'hunter2'...)
-client.users.create(user) # => Qualtrics::User
+user = Qualtrics::API::User.new(username: 'username', password: 'hunter2'...)
+client.users.create(user) # => Qualtrics::API::User
 ```
 
 Required Attributes:
@@ -275,8 +275,8 @@ client.users.delete(id: '5135124') # => true
 ### Surveys Resource
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
-client.surveys # => Qualtrics::SurveyResource
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client.surveys # => Qualtrics::API::SurveyResource
 ```
 
 #### Supported Actions
@@ -286,7 +286,7 @@ client.surveys # => Qualtrics::SurveyResource
 `GET /API/v3/surveys`
 
 ```ruby
-client.surveys.all # => [Qualtrics::Survey]
+client.surveys.all # => [Qualtrics::API::Survey]
 ```
 
 ##### Find
@@ -294,7 +294,7 @@ client.surveys.all # => [Qualtrics::Survey]
 `GET /API/v3/surveys/:id`
 
 ```ruby
-client.surveys.find(id: '1231r5') # => Qualtrics::Survey
+client.surveys.find(id: '1231r5') # => Qualtrics::API::Survey
 ```
 
 ##### Update
@@ -323,8 +323,8 @@ client.surveys.delete(id: '1641435') # => true
 ### Library Messages Resource
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
-client.library_messages # => Qualtrics::LibraryMessageResource
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client.library_messages # => Qualtrics::API::LibraryMessageResource
 ```
 
 #### Supported Actions
@@ -334,7 +334,7 @@ client.library_messages # => Qualtrics::LibraryMessageResource
 `GET /API/v3/libraries/:library_id/messages`
 
 ```ruby
-client.library_messages.all(library_id: '151234') # => [Qualtrics::LibraryMessage]
+client.library_messages.all(library_id: '151234') # => [Qualtrics::API::LibraryMessage]
 ```
 
 ##### Find
@@ -342,7 +342,7 @@ client.library_messages.all(library_id: '151234') # => [Qualtrics::LibraryMessag
 `GET /API/v3/libraries/:library_id/messages/:id`
 
 ```ruby
-client.library_messages.find(library_id: '1251243', id: '452345') # => Qualtrics::LibraryMessage
+client.library_messages.find(library_id: '1251243', id: '452345') # => Qualtrics::API::LibraryMessage
 ```
 
 ##### Create
@@ -350,8 +350,8 @@ client.library_messages.find(library_id: '1251243', id: '452345') # => Qualtrics
 `POST /API/v3/libraries/:library_id/messages`
 
 ```ruby
-library_message = Qualtrics::LibraryMessage.new(description: 'Description',...)
-client.library_messages.create(library_message, library_id: '513223') # => Qualtrics::LibraryMessage
+library_message = Qualtrics::API::LibraryMessage.new(description: 'Description',...)
+client.library_messages.create(library_message, library_id: '513223') # => Qualtrics::API::LibraryMessage
 ```
 
 Required Attributes:
@@ -385,8 +385,8 @@ client.library_messages.delete(library_id: '12321', id: '41231') # => true
 ### Distributions Resource
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
-client.distributions # => Qualtrics::DistributionResource
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client.distributions # => Qualtrics::API::DistributionResource
 ```
 
 #### Supported Actions
@@ -396,7 +396,7 @@ client.distributions # => Qualtrics::DistributionResource
 `GET /API/v3/distributions`
 
 ```ruby
-client.distributions.all(survey_id: '123123') # => [Qualtrics::Distribution]
+client.distributions.all(survey_id: '123123') # => [Qualtrics::API::Distribution]
 ```
 
 Optional Parameters:
@@ -411,7 +411,7 @@ Optional Parameters:
 `GET /API/v3/distributions/:id`
 
 ```ruby
-client.distributions.find(id: '2341234', survey_id: '99391193') # => Qualtrics::Distribution
+client.distributions.find(id: '2341234', survey_id: '99391193') # => Qualtrics::API::Distribution
 ```
 
 ##### Create
@@ -419,28 +419,28 @@ client.distributions.find(id: '2341234', survey_id: '99391193') # => Qualtrics::
 `POST /API/v3/distributions`
 
 ```ruby
-distribution_headers = Qualtrics::Distribution::Headers.new(from_email: 'email@email', from_name: 'Tom', reply_to_email: 'different@email', subject: 'Subject')
-distribution_recipients = Qualtrics::Distribution::Recipients.new(mailing_list_id: '123123')
-distribution = Qualtrics::Distribution.new(send_date: Date.today, headers: distribution_headers, recipients: distribution_recipients)
-client.distributions.create(distribution) # => Qualtrics::Distribution
+distribution_headers = Qualtrics::API::Distribution::Headers.new(from_email: 'email@email', from_name: 'Tom', reply_to_email: 'different@email', subject: 'Subject')
+distribution_recipients = Qualtrics::API::Distribution::Recipients.new(mailing_list_id: '123123')
+distribution = Qualtrics::API::Distribution.new(send_date: Date.today, headers: distribution_headers, recipients: distribution_recipients)
+client.distributions.create(distribution) # => Qualtrics::API::Distribution
 ```
 
 Required Attributes:
 
 * send_date: `DateTime` - Time to send the email
-* headers: `Qualtrics::Distribution::Headers` -
+* headers: `Qualtrics::API::Distribution::Headers` -
   * from_email: `String` - Email from address **(required)**
   * from_name: `String` - Email from name **(required)**
   * reply_to_email: `String` - Email reply to address **(required)**
   * subject: `String` - Email subject **(required)**
-* recipients: `Qualtrics::Distribution::Recipients` -
+* recipients: `Qualtrics::API::Distribution::Recipients` -
   * mailing_list_id: `String` - ID of the mailing list **(required)**
   * contact_id: `String` - ID of a contact (optional)
-* message: `Qualtrics::Distribution::Message` -
+* message: `Qualtrics::API::Distribution::Message` -
   * message_id: `String` - ID of the message (required along with library_id if message_text is not provided)
   * library_id: `String` - ID of the library (required along with message_id if message_text is not provided)
   * message_text: `String` - Custom message text (required if message_id and library_id are not provided)
-* survey_link: `Qualtrics::Distribution::SurveyLink` -
+* survey_link: `Qualtrics::API::Distribution::SurveyLink` -
   * survey_id: `String` - ID of the survey to send (required to send survey with distribution)
   * expiration_date: `DateTime` - Time of the expiry for the survey link (required to send survey with distribution)
   * type: `String` - Type of link to send out (Individual, Multiple, Anonymous) (required to send survey with distribution)
@@ -450,21 +450,21 @@ Required Attributes:
 `POST /API/v3/distribution/:id/thankyous`
 
 ```ruby
-distribution_headers = Qualtrics::Distribution::Headers.new(from_email: 'email@email', from_name: 'Tom', subject: 'Subject')
-distribution_message = Qualtrics::Distribution::Message.new(message_id: '123', library_id: '345')
-thank_you_distribution = Qualtrics::Distribution.new(send_date: Date.today, headers: distribution_headers, message: distribution_message)
+distribution_headers = Qualtrics::API::Distribution::Headers.new(from_email: 'email@email', from_name: 'Tom', subject: 'Subject')
+distribution_message = Qualtrics::API::Distribution::Message.new(message_id: '123', library_id: '345')
+thank_you_distribution = Qualtrics::API::Distribution.new(send_date: Date.today, headers: distribution_headers, message: distribution_message)
 client.distributions.create_thankyou(thank_you_distribution, id: '3453')
 ```
 
 Required Attributes:
 
 * send_date: `DateTime` - Time to send the email
-* headers: `Qualtrics::Distribution::Headers` -
+* headers: `Qualtrics::API::Distribution::Headers` -
   * from_email: `String` - Email from address **(required)**
   * from_name: `String` - Email from name **(required)**
   * reply_to_email: `String` - Email reply to address (optional)
   * subject: `String` - Email subject **(required)**
-* message: `Qualtrics::Distribution::Message` -
+* message: `Qualtrics::API::Distribution::Message` -
   * message_id: `String` - ID of the message **(required)**
   * library_id: `String` - ID of the library **(required)**
 
@@ -473,29 +473,29 @@ Required Attributes:
 `POST /API/v3/distribution/:id/reminders`
 
 ```ruby
-distribution_headers = Qualtrics::Distribution::Headers.new(from_email: 'email@email', from_name: 'Tom', subject: 'Subject')
-distribution_message = Qualtrics::Distribution::Message.new(message_id: '123', library_id: '345')
-reminder_distribution = Qualtrics::Distribution.new(send_date: Date.today, headers: distribution_headers, message: distribution_message)
+distribution_headers = Qualtrics::API::Distribution::Headers.new(from_email: 'email@email', from_name: 'Tom', subject: 'Subject')
+distribution_message = Qualtrics::API::Distribution::Message.new(message_id: '123', library_id: '345')
+reminder_distribution = Qualtrics::API::Distribution.new(send_date: Date.today, headers: distribution_headers, message: distribution_message)
 client.distributions.create_reminder(reminder_distribution, id: '3453')
 ```
 
 Required Attributes:
 
 * send_date: `DateTime` - Time to send the email
-* headers: `Qualtrics::Distribution::Headers` -
+* headers: `Qualtrics::API::Distribution::Headers` -
   * from_email: `String` - Email from address **(required)**
   * from_name: `String` - Email from name **(required)**
   * reply_to_email: `String` - Email reply to address (optional)
   * subject: `String` - Email subject **(required)**
-* message: `Qualtrics::Distribution::Message` -
+* message: `Qualtrics::API::Distribution::Message` -
   * message_id: `String` - ID of the message **(required)**
   * library_id: `String` - ID of the library **(required)**
 
 ### Mailing List Resource
 
 ```ruby
-client = Qualtrics::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
-client.distributions # => Qualtrics::DistributionResource
+client = Qualtrics::API::Client.new(api_token: 'YOUR_TOKEN', data_center_id: 'YOUR_DATA_CENTER_ID')
+client.distributions # => Qualtrics::API::DistributionResource
 ```
 
 #### Supported Actions
@@ -505,7 +505,7 @@ client.distributions # => Qualtrics::DistributionResource
 `GET /API/v3/mailinglists`
 
 ```ruby
-client.mailing_lists.all # => [Qualtrics::MailingList]
+client.mailing_lists.all # => [Qualtrics::API::MailingList]
 ```
 
 ##### Find
@@ -513,7 +513,7 @@ client.mailing_lists.all # => [Qualtrics::MailingList]
 `GET /API/v3/mailinglists/:id`
 
 ```ruby
-client.mailing_lists.find(id: '234234') # => Qualtrics::MailingList
+client.mailing_lists.find(id: '234234') # => Qualtrics::API::MailingList
 ```
 
 ##### Create
@@ -521,8 +521,8 @@ client.mailing_lists.find(id: '234234') # => Qualtrics::MailingList
 `POST /API/v3/mailinglists`
 
 ```ruby
-mailing_list = Qualtrics::MailingList.new(library_id: '1231', name: 'name')
-client.mailing_lists.create(mailing_list) # => Qualtrics::MailingList
+mailing_list = Qualtrics::API::MailingList.new(library_id: '1231', name: 'name')
+client.mailing_lists.create(mailing_list) # => Qualtrics::API::MailingList
 ```
 
 Required Attributes:
@@ -562,7 +562,7 @@ client.mailing_lists.delete(id: '1231') # => true
 `GET /API/v3/mailinglists/:id/contacts`
 
 ```ruby
-client.mailing_lists.list_contacts(id: '123') # => [Qualtrics::MailingList::Contact]
+client.mailing_lists.list_contacts(id: '123') # => [Qualtrics::API::MailingList::Contact]
 ```
 
 ##### Update Contact
@@ -632,7 +632,7 @@ Optional Parameters:
 `GET /API/responseexports/:id`
 
 ```ruby
-client.response_exports.find(id: '123') # => Qualtrics::ResponseExport
+client.response_exports.find(id: '123') # => Qualtrics::API::ResponseExport
 ```
 
 ##### Get File

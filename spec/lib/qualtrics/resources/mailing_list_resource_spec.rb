@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Qualtrics::MailingListResource do
+RSpec.describe Qualtrics::API::MailingListResource do
   subject(:resource) { described_class.new(connection: connection) }
   include_context 'resources'
 
@@ -10,7 +10,7 @@ RSpec.describe Qualtrics::MailingListResource do
       normalized_response = JSON.parse(response)['result'].to_json
       stub_do_api('/API/v3/mailinglists', :get).to_return(body: response)
 
-      expected_records = Qualtrics::MailingListMapping.extract_collection(normalized_response, :read)
+      expected_records = Qualtrics::API::MailingListMapping.extract_collection(normalized_response, :read)
       returned_records = resource.all
 
       expect(returned_records).to eq expected_records
@@ -22,7 +22,7 @@ RSpec.describe Qualtrics::MailingListResource do
       response = api_fixture('mailing_lists/find')
       stub_do_api('/API/v3/mailinglists/123', :get).to_return(body: response)
 
-      expected_record = Qualtrics::MailingListMapping.extract_single(response, :read)
+      expected_record = Qualtrics::API::MailingListMapping.extract_single(response, :read)
       expect(resource.find(id: '123')).to eq expected_record
     end
   end
@@ -32,7 +32,7 @@ RSpec.describe Qualtrics::MailingListResource do
       response = api_fixture('mailing_lists/create')
       stub_do_api('/API/v3/mailinglists', :post).to_return(body: response)
 
-      mailing_list = Qualtrics::MailingList.new
+      mailing_list = Qualtrics::API::MailingList.new
       expect(resource.create(mailing_list).id).to eq '123'
     end
   end
@@ -40,7 +40,7 @@ RSpec.describe Qualtrics::MailingListResource do
   describe '#update' do
     it 'sends the update request to the mailing list' do
       request = stub_do_api('/API/v3/mailinglists/123', :put)
-      resource.update(Qualtrics::MailingList.new, id: '123')
+      resource.update(Qualtrics::API::MailingList.new, id: '123')
 
       expect(request).to have_been_made
     end
@@ -61,7 +61,7 @@ RSpec.describe Qualtrics::MailingListResource do
       normalized_response = JSON.parse(response)['result'].to_json
       stub_do_api('/API/v3/mailinglists/123/contacts', :get).to_return(body: response)
 
-      expected_records = Qualtrics::ContactMapping.extract_collection(normalized_response, :read)
+      expected_records = Qualtrics::API::ContactMapping.extract_collection(normalized_response, :read)
       returned_records = resource.list_contacts(id: '123')
 
       expect(returned_records).to eq expected_records
@@ -71,7 +71,7 @@ RSpec.describe Qualtrics::MailingListResource do
   describe '#update_contact' do
     it 'sends the update request to the contact' do
       request = stub_do_api('/API/v3/mailinglists/123/contacts/456', :put)
-      resource.update_contact(Qualtrics::MailingList::Contact.new, id: '123', contact_id: '456')
+      resource.update_contact(Qualtrics::API::MailingList::Contact.new, id: '123', contact_id: '456')
 
       expect(request).to have_been_made
     end
@@ -80,7 +80,7 @@ RSpec.describe Qualtrics::MailingListResource do
   describe '#delete_contact' do
     it 'sends the delete request for the contact' do
       request = stub_do_api('/API/v3/mailinglists/123/contacts/456', :delete)
-      resource.delete_contact(Qualtrics::MailingList::Contact.new, id: '123', contact_id: '456')
+      resource.delete_contact(Qualtrics::API::MailingList::Contact.new, id: '123', contact_id: '456')
 
       expect(request).to have_been_made
     end

@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Group < BaseModel
     attribute :id
     attribute :type

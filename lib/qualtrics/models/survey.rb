@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Survey < BaseModel
     include ::ActiveModel::Serialization
 
@@ -24,7 +24,7 @@ module Qualtrics
     # @return [OpenStruct]
     #
     def self.model_name
-      OpenStruct.new(name: "Qualtrics::Survey",
+      OpenStruct.new(name: "Qualtrics::API::Survey",
                      klass: self,
                      singular: "qualtrics_survey",
                      plural: "qualtrics_surveys",

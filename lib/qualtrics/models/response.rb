@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Response < BaseModel
     attribute :id
     attribute :response_set

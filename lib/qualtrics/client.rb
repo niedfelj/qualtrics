@@ -1,6 +1,6 @@
 require 'faraday'
 
-module Qualtrics
+module Qualtrics::API
   class Client
     attr_reader :api_token, :data_center_id
 

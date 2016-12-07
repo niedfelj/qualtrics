@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class ErrorMapping
     Error = Struct.new(:message, :id)
 

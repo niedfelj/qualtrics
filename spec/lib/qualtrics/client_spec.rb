@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe Qualtrics::Client do
-  subject(:client) { Qualtrics::Client.new(api_token: 'not real', data_center_id: 'org') }
+RSpec.describe Qualtrics::API::Client do
+  subject(:client) { Qualtrics::API::Client.new(api_token: 'not real', data_center_id: 'org') }
 
   describe '#initialize' do
     it 'initializes with an access token' do

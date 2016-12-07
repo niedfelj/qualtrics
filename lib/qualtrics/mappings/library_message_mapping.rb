@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class LibraryMessageMapping
     include Kartograph::DSL
 

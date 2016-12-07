@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class LibraryMessageResource < ResourceKit::Resource
     include ErrorHandlingResourceable
 

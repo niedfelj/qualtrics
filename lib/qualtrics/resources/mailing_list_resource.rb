@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class MailingListResource < ResourceKit::Resource
     include ErrorHandlingResourceable
 

@@ -1,6 +1,6 @@
 require 'virtus'
 
-module Qualtrics
+module Qualtrics::API
   class BaseModel
     include Virtus.model
     include Virtus::Equalizer.new(name || inspect)

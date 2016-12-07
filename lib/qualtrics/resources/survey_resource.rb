@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class SurveyResource < ResourceKit::Resource
     include ErrorHandlingResourceable
 

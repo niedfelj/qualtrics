@@ -1,9 +1,9 @@
-module Qualtrics
+module Qualtrics::API
   class ResponsesMapping
 
-    # Maps each of the responses to a Qualtrics::Response model
+    # Maps each of the responses to a Qualtrics::API::Response model
     #
-    # @return [Qualtrics::Response]
+    # @return [Qualtrics::API::Response]
     def self.from_json_or_xml(serialized_response, f_type)
       case f_type
       when :json

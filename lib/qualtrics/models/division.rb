@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Division < BaseModel
     attribute :id
     attribute :organization_id

@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Distribution < BaseModel
     include ::ActiveModel::Serialization
 
@@ -23,7 +23,7 @@ module Qualtrics
     # @return [OpenStruct]
     #
     def self.model_name
-      OpenStruct.new(name: "Qualtrics::Distribution",
+      OpenStruct.new(name: "Qualtrics::API::Distribution",
                      klass: self,
                      singular: "qualtrics_distribution",
                      plural: "qualtrics_distributions",

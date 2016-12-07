@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class GroupResource < ResourceKit::Resource
     include ErrorHandlingResourceable
 

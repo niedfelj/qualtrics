@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Qualtrics::ResponseExportResource do
+RSpec.describe Qualtrics::API::ResponseExportResource do
   subject(:resource) { described_class.new(connection: connection) }
   include_context 'resources'
 
@@ -9,7 +9,7 @@ RSpec.describe Qualtrics::ResponseExportResource do
       response = api_fixture('response_exports/find')
       stub_do_api('/API/v3/responseexports/123', :get).to_return(body: response)
 
-      expected_record = Qualtrics::ResponseExportMapping.extract_single(response, :read)
+      expected_record = Qualtrics::API::ResponseExportMapping.extract_single(response, :read)
       expect(resource.find(id: '123')).to eq expected_record
     end
   end

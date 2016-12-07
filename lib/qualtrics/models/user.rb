@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class User < BaseModel
     attribute :id
     attribute :username

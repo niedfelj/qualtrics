@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class MailingList::Contact < BaseModel
     attribute :id
     attribute :first_name

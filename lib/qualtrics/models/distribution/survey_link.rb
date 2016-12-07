@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Distribution::SurveyLink < BaseModel
     attribute :survey_id
     attribute :expiration_date

@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class Distribution::Headers < BaseModel
     attribute :from_email
     attribute :from_name

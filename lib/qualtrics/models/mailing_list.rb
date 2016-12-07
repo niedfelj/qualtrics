@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class MailingList < BaseModel
     include ::ActiveModel::Serialization
 
@@ -13,7 +13,7 @@ module Qualtrics
     # @return [OpenStruct]
     #
     def self.model_name
-      OpenStruct.new(name: "Qualtrics::mailing_list",
+      OpenStruct.new(name: "Qualtrics::API::MailingList",
                      klass: self,
                      singular: "qualtrics_mailing_list",
                      plural: "qualtrics_mailing_lists",

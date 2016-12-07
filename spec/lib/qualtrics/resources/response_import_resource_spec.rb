@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Qualtrics::ResponseImportResource do
+RSpec.describe Qualtrics::API::ResponseImportResource do
   subject(:resource) { described_class.new(connection: connection) }
   include_context 'resources'
 

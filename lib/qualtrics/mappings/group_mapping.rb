@@ -1,4 +1,4 @@
-module Qualtrics
+module Qualtrics::API
   class GroupMapping
     include Kartograph::DSL
 

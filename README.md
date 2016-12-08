@@ -646,6 +646,4 @@ client.response_exports.get_file(id: '123') # => Zip File
 *Note: This is called from the find method, but it is callable on it's own if you need
 just the file.*
 
-## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

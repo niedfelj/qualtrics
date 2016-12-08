@@ -32,7 +32,7 @@ module Qualtrics::API
         property :message_text, scopes: [:read, :create], key: 'messageText'
       end
 
-      property :distribution_link, scopes: [:read, :create], optional: true do
+      property :survey_link, scopes: [:read, :create], optional: true, key: 'surveyLink' do
         mapping Distribution::SurveyLink
 
         property :survey_id,        scopes: [:read, :create], key: 'surveyId'

@@ -12,7 +12,7 @@ module Qualtrics::API
     attribute :headers
     attribute :recipients
     attribute :message
-    attribute :distribution_link
+    attribute :survey_link
     attribute :stats
 
     ##

@@ -5,7 +5,6 @@ stages:
 
 variables: &vars
   IMAGE: code.osu.edu:5000/asctech/qualtrics-ruby-api-wrapper:${CI_BUILD_REF_NAME}
-  RAILS_ENV: test
   GIT_STRATEGY: none
 
 build:

@@ -45,11 +45,11 @@ rspec:
 
 rubocop:
   <<: *test
-  script: bundle exec rubocop app lib
+  script: bundle exec rubocop lib
 
 rubycritic:
   <<: *test
-  script: bundle exec rubycritic -ms 70 --no-browser app lib
+  script: bundle exec rubycritic -ms 70 --no-browser lib
 
 cleanup:
   stage: cleanup

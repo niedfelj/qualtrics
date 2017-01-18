@@ -1,11 +1,16 @@
-FROM code.osu.edu:5000/asctech/ruby:2.3
+FROM code.osu.edu:5000/asctech/ruby:2.4
 
 ENV GEM_HOME=/usr/local/bundle
 ENV PATH=$GEM_HOME/bin:$PATH
 
-RUN echo "gem: --no-ri --no-rdoc" >> ~/.gemrc \
-  && bundle config --global jobs 3
+RUN useradd docker \
+  && mkdir /app \
+  && chown -R docker /usr/local/bundle /app \
+  && chmod -R u+rwx /usr/local/bundle /app \
+  && echo "gem: --no-ri --no-rdoc" >> /home/docker/.gemrc \
+  && su docker -c "bundle config --global jobs 3"
 
+USER docker
 WORKDIR /app
 
 COPY Gemfile Gemfile

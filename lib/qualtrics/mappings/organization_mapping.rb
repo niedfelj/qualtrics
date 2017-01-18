@@ -4,7 +4,7 @@ module Qualtrics::API
 
     kartograph do
       mapping Organization
-      root_key singular: 'result', scopes: [:read]
+      root_key singular: "result", scopes: [:read]
 
       scoped :read do
         property :id

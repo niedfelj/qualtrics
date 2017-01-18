@@ -1,4 +1,4 @@
-require 'faraday'
+require "faraday"
 
 module Qualtrics::API
   class Client
@@ -45,14 +45,14 @@ module Qualtrics::API
 
     private
 
-    def connection_options
-      {
-        url: "https://#{@data_center_id}.qualtrics.com",
-        headers: {
-          content_type: 'application/json',
-          X_API_TOKEN: api_token
+      def connection_options
+        {
+          url: "https://#{@data_center_id}.qualtrics.com",
+          headers: {
+            content_type: "application/json",
+            X_API_TOKEN: api_token
+          }
         }
-      }
-    end
+      end
   end
 end

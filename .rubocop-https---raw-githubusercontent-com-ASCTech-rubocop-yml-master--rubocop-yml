@@ -1,0 +1,14 @@
+inherit_from:
+  - https://raw.githubusercontent.com/rails/rails/master/.rubocop.yml
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+    - 'config/boot.rb'
+    - 'config/application.rb'
+    - 'config/environments/*'
+    - 'config/environment.rb'
+    - 'config.ru'
+    - 'Rakefile'

@@ -4,10 +4,10 @@ module Qualtrics::API
 
     kartograph do
       mapping ResponseExport
-      root_key singular: 'result', scopes: [:read]
+      root_key singular: "result", scopes: [:read]
 
       scoped :read do
-        property :percent_complete, key: 'percentComplete'
+        property :percent_complete, key: "percentComplete"
       end
     end
   end

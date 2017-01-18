@@ -15,7 +15,6 @@ module Qualtrics::API
     attribute :embedded_data
     attribute :response_counts
 
-
     ##
     # Make the model serializeable by ActiveModelSerializer
     #

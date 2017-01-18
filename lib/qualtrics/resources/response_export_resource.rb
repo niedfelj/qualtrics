@@ -10,7 +10,7 @@ module Qualtrics::API
     end
 
     resources do
-      action :find, 'GET /API/v3/responseexports/:id' do
+      action :find, "GET /API/v3/responseexports/:id" do
         handler(200) do |response, hash|
           resp_exp = ResponseExportMapping.extract_single(response.body, :read)
           resp_exp.id = hash[:id]
@@ -23,7 +23,7 @@ module Qualtrics::API
         end
       end
 
-      action :create, 'POST /API/v3/responseexports' do
+      action :create, "POST /API/v3/responseexports" do
         body do |hash|
           params = { surveyId: hash[:survey_id], format: hash[:file_type] }
           optional_params = [:last_response_id, :start_date, :end_date, :limit,
@@ -38,10 +38,10 @@ module Qualtrics::API
           params.to_json
         end
 
-        handler(200) { |response| JSON.parse(response.body)['result']['id'] }
+        handler(200) { |response| JSON.parse(response.body)["result"]["id"] }
       end
 
-      action :get_file, 'GET /API/v3/responseexports/:id/file' do
+      action :get_file, "GET /API/v3/responseexports/:id/file" do
         handler(200) { |response| response.body }
       end
     end

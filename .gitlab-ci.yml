@@ -1,0 +1,59 @@
+stages:
+  - build
+  - test
+  - cleanup
+
+variables: &vars
+  IMAGE: code.osu.edu:5000/asctech/qualtrics-ruby-api-wrapper:${CI_BUILD_REF_NAME}
+  RAILS_ENV: test
+  GIT_STRATEGY: none
+
+build:
+  stage: build
+  image: docker:latest
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN code.osu.edu:5000
+  script:
+    - docker build -t $IMAGE .
+    - docker push $IMAGE
+  tags:
+    - build
+    - docker-socket
+  variables:
+    <<: *vars
+    GIT_STRATEGY: clone
+
+.before script setup: &setup
+  before_script:
+    - cd /app
+
+.test template: &test
+  <<: *setup
+  stage: test
+  image: $IMAGE
+  tags:
+    - test
+    - docker
+
+bundle-audit:
+  <<: *test
+  script: bundle exec bundle-audit check --update
+
+rspec:
+  <<: *test
+  script: bundle exec rspec
+
+rubocop:
+  <<: *test
+  script: bundle exec rubocop app lib
+
+rubycritic:
+  <<: *test
+  script: bundle exec rubycritic -ms 70 --no-browser app lib
+
+cleanup:
+  stage: cleanup
+  script: docker rmi $(docker images -qaf dangling=true) 2>/dev/null || true
+  when: always
+  tags:
+    - shell

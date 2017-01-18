@@ -3,31 +3,31 @@ module Qualtrics::API
     include ErrorHandlingResourceable
 
     resources do
-      action :all, 'GET /API/v3/users' do
+      action :all, "GET /API/v3/users" do
         handler(200) do |response|
-          body = JSON.parse(response.body)['result'].to_json
+          body = JSON.parse(response.body)["result"].to_json
           UserMapping.extract_collection(body, :read)
         end
       end
 
-      action :find, 'GET /API/v3/users/:id' do
+      action :find, "GET /API/v3/users/:id" do
         handler(200) { |response| UserMapping.extract_single(response.body, :read) }
       end
 
-      action :create, 'POST /API/v3/users' do
+      action :create, "POST /API/v3/users" do
         body { |object| UserMapping.representation_for(:create, object) }
         handler(200) do |response, object|
-          object.id = JSON.parse(response.body)['result']['id']
+          object.id = JSON.parse(response.body)["result"]["id"]
           object
         end
       end
 
-      action :update, 'PUT /API/v3/users/:id' do
+      action :update, "PUT /API/v3/users/:id" do
         body { |object| UserMapping.representation_for(:update, object) }
         handler(200) { |_| true }
       end
 
-      action :delete, 'DELETE /API/v3/users/:id' do
+      action :delete, "DELETE /API/v3/users/:id" do
         handler(200) { |_| true }
       end
     end

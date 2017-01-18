@@ -1,4 +1,4 @@
-require 'virtus'
+require "virtus"
 
 module Qualtrics::API
   class BaseModel

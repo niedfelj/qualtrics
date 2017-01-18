@@ -4,7 +4,7 @@ module Qualtrics::API
 
     kartograph do
       mapping LibraryMessage
-      root_key singular: 'result', plural: 'elements', scopes: [:read]
+      root_key singular: "result", plural: "elements", scopes: [:read]
 
       property :id,           scopes: [:read]
       property :category,     scopes: [:read, :create]

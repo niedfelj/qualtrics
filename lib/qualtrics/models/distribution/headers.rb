@@ -5,7 +5,6 @@ module Qualtrics::API
     attribute :reply_to_email
     attribute :subject
 
-
     ##
     # Make the model serializeable by ActiveModelSerializer
     #

@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rubyzip", "~> 1.2"
+  spec.add_dependency "rubyzip", "~> 1.2.1"
   spec.add_dependency "faraday", "~> 0.9.2"
   # spec.add_dependency "resource_kit", "~> 0.1.5"
   spec.add_dependency "kartograph", "~> 0.2.4"

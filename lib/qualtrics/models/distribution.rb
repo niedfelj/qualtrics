@@ -33,5 +33,13 @@ module Qualtrics::API
                      route_key: "qualtrics_distributions",
                      singular_route_key: "qualtrics_distribution")
     end
+
+    def created_at
+      creation_date
+    end
+
+    def updated_at
+      modified_date
+    end
   end
 end

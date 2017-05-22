@@ -33,5 +33,13 @@ module Qualtrics::API
                      route_key: "qualtrics_surveys",
                      singular_route_key: "qualtrics_survey")
     end
+
+    def created_at
+      creation_date
+    end
+
+    def updated_at
+      last_modified
+    end
   end
 end

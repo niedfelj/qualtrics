@@ -10,5 +10,13 @@ module Qualtrics::API
       values = Hash[instance_variables.map { |name| [name, instance_variable_get(name)] }]
       "<#{self.class.name} #{values}>"
     end
+
+    def created_at
+      nil
+    end
+
+    def updated_at
+      nil
+    end
   end
 end

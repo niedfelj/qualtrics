@@ -3,8 +3,9 @@ FROM code.osu.edu:5000/asctech/docker/ruby:2.3
 ENV GEM_HOME=/usr/local/bundle
 ENV PATH=$GEM_HOME/bin:$PATH
 
-RUN useradd --user-group qualtrics && \
-  chown -R qualtrics:qualtrics $GEM_HOME
+RUN mkdir /app && \
+  useradd --user-group qualtrics && \
+  chown -R qualtrics:qualtrics /app $GEM_HOME
 
 USER qualtrics
 WORKDIR /app

@@ -1,4 +1,4 @@
-FROM code.osu.edu:5000/asctech/ruby:2.3
+FROM code.osu.edu:5000/asctech/docker/ruby:2.3
 
 ENV GEM_HOME=/usr/local/bundle
 ENV PATH=$GEM_HOME/bin:$PATH

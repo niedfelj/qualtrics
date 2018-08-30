@@ -1,58 +1,40 @@
-stages:
-  - build
-  - test
-  - cleanup
+stages: [build, analysis, test]
 
 variables: &vars
-  IMAGE: code.osu.edu:5000/asctech/qualtrics-ruby-api-wrapper:${CI_BUILD_REF_NAME}
+  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   GIT_STRATEGY: none
 
 build:
   stage: build
-  image: docker:latest
-  before_script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN code.osu.edu:5000
-  script:
-    - docker build -t $IMAGE .
-    - docker push $IMAGE
-  tags:
-    - build
-    - docker-socket
+  before_script: []
+  script: docker build -t $IMAGE . && docker push $IMAGE
+  tags: []
   variables:
     <<: *vars
     GIT_STRATEGY: clone
 
-.before script setup: &setup
-  before_script:
-    - cd /app
+before_script: [cd /app]
 
-.test template: &test
-  <<: *setup
-  stage: test
+.analysis: &analysis
+  stage: analysis
   image: $IMAGE
-  tags:
-    - test
-    - docker
+  tags: [test]
 
 bundle-audit:
-  <<: *test
+  <<: *analysis
   script: bundle exec bundle-audit check --update
+
+rubocop:
+  <<: *analysis
+  script: bundle exec rubocop lib
+
+.test: &test
+  stage: test
+  image: $IMAGE
+  tags: [test]
 
 rspec:
   <<: *test
   script: bundle exec rspec
 
-rubocop:
-  <<: *test
-  script: bundle exec rubocop lib
 
-rubycritic:
-  <<: *test
-  script: bundle exec rubycritic -ms 70 --no-browser lib
-
-cleanup:
-  stage: cleanup
-  script: docker rmi $(docker images -qaf dangling=true) 2>/dev/null || true
-  when: always
-  tags:
-    - shell

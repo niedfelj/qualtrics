@@ -3,7 +3,7 @@
 
 module Kartograph
   class Artist
-    def build_properties(scope)
+    def build_properties(scope, *args, **kwargs, &block)
       scoped_properties = scope ? properties.filter_by_scope(scope) : properties
       scoped_properties.each_with_object({}) do |property, mapped|
         raise ArgumentError, "#{object} does not respond to #{property.name}, so we can't map it" unless object.respond_to?(property.name)

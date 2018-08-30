@@ -16,6 +16,6 @@ COPY qualtrics.gemspec qualtrics.gemspec
 COPY ./lib/qualtrics/version.rb /app/lib/qualtrics/version.rb
 RUN bundle install
 
-COPY . /app
+COPY --chown=qualtrics:qualtrics . /app
 
 CMD /bin/bash

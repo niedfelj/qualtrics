@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rubyzip"
   spec.add_dependency "faraday"
-  # spec.add_dependency "resource_kit", "~> 0.1.5"
+  spec.add_dependency "resource_kit"
   spec.add_dependency "kartograph"
   spec.add_dependency "virtus"
   spec.add_dependency "activemodel"

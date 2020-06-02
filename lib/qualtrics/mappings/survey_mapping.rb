@@ -26,6 +26,7 @@ module Qualtrics::API
         property :embedded_data,      key: "embeddedData"
         property :response_counts,    key: "responseCounts"
         property :questions
+        property :blocks
         property :export_column_map,  key: "exportColumnMap"
       end
     end

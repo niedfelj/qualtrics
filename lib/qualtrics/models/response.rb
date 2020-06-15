@@ -18,6 +18,8 @@ module Qualtrics::API
     attribute :location_latitude
     attribute :location_longitude
     attribute :location_accuracy
+    attribute :user_language
+    attribute :distribution_channel
     attribute :questions
 
     ##

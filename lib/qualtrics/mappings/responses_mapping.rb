@@ -15,23 +15,28 @@ module Qualtrics::API
 
       responses = []
       unmapped_responses.each do |response|
+
         r = Response.new
-        r.id                        = response["ResponseID"]
-        r.response_set              = response["ResponseSet"]
-        r.ip_address                = response["IPAddress"]
-        r.start_date                = response["StartDate"]
-        r.end_date                  = response["EndDate"]
-        r.last_name                 = response["RecipientLastName"]
-        r.first_name                = response["RecipientFirstName"]
-        r.email                     = response["RecipientEmail"]
+        r.id                        = response["responseId"]
+
+        response = response["values"]
+        r.response_set              = response["responseSet"]
+        r.ip_address                = response["ipAddress"]
+        r.start_date                = response["startDate"]
+        r.end_date                  = response["endDate"]
+        r.last_name                 = response["recipientLastName"]
+        r.first_name                = response["recipientFirstName"]
+        r.email                     = response["recipientEmail"]
         r.phone_number              = response["Phone Number"]
         r.country                   = response["Country"]
-        r.external_data_reference   = response["ExternalDataReference"]
-        r.finished                  = response["Finished"]
-        r.status                    = response["Status"]
-        r.location_latitude         = response["LocationLatitude"]
-        r.location_longitude        = response["LocationLongitude"]
-        r.location_accuracy         = response["LocationAccuracy"]
+        r.external_data_reference   = response["externalDataReference"]
+        r.finished                  = response["finished"]
+        r.status                    = response["status"]
+        r.location_latitude         = response["locationLatitude"]
+        r.location_longitude        = response["locationLongitude"]
+        r.location_accuracy         = response["locationAccuracy"]
+        r.user_language             = response["userLanguage"]
+        r.distribution_channel      = response["distributionChannel"]
 
         r.questions = {}
         response.keys.grep(/Q([0-9xy_]+)/).each do |key|

@@ -3,6 +3,8 @@ module Qualtrics::API
     attribute :id
     attribute :percent_complete
     attribute :file
+    attribute :status
+    attribute :file_id
 
     # Unzips and maps the serialized responses to a Response object
     #
@@ -10,6 +12,21 @@ module Qualtrics::API
     def get_responses
       unzip_responses(file)
     end
+
+    def get_raw_export 
+      File.open("/tmp/qualtrics_response_export_#{id}.zip", "wb") { |f| f.write file }    
+      
+      contents = ""
+      Zip::File.open("/tmp/qualtrics_response_export_#{id}.zip") do |zip|
+        zip.each do |file|
+          contents << file.get_input_stream.read
+        end 
+      end 
+      
+      File.delete("/tmp/qualtrics_response_export_#{id}.zip")
+      
+      contents 
+    end 
 
     private
 

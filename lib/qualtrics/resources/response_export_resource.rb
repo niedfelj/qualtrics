@@ -10,22 +10,22 @@ module Qualtrics::API
     end
 
     resources do
-      action :find, "GET /API/v3/responseexports/:id" do
+      action :find, "GET /API/v3/surveys/:survey_id/export-responses/:id" do
         handler(200) do |response, hash|
           resp_exp = ResponseExportMapping.extract_single(response.body, :read)
           resp_exp.id = hash[:id]
 
           unless resp_exp.percent_complete < 100
-            resp_exp.file = get_file(id: hash[:id])
+            resp_exp.file = get_file(survey_id: hash[:survey_id], id: resp_exp.file_id)
           end
 
           resp_exp
         end
       end
 
-      action :create, "POST /API/v3/responseexports" do
+      action :create, "POST /API/v3/surveys/:survey_id/export-responses" do
         body do |hash|
-          params = { surveyId: hash[:survey_id], format: hash[:file_type] }
+          params = { format: hash[:file_type] }
           optional_params = [:last_response_id, :start_date, :end_date, :limit,
                              :included_question_ids, :use_label, :decimal_separator,
                              :seen_unanswered_record, :use_local_time]
@@ -38,10 +38,10 @@ module Qualtrics::API
           params.to_json
         end
 
-        handler(200) { |response| JSON.parse(response.body)["result"]["id"] }
+        handler(200) { |response| JSON.parse(response.body)["result"]["progressId"] }
       end
 
-      action :get_file, "GET /API/v3/responseexports/:id/file" do
+      action :get_file, "GET /API/v3/surveys/:survey_id/export-responses/:id/file" do
         handler(200) { |response| response.body }
       end
     end

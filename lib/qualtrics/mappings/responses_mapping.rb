@@ -24,6 +24,8 @@ module Qualtrics::API
         r.last_name                 = response["RecipientLastName"]
         r.first_name                = response["RecipientFirstName"]
         r.email                     = response["RecipientEmail"]
+        r.phone_number              = response["Phone Number"]
+        r.country                   = response["Country"]
         r.external_data_reference   = response["ExternalDataReference"]
         r.finished                  = response["Finished"]
         r.status                    = response["Status"]

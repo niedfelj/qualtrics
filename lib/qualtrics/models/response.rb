@@ -10,6 +10,8 @@ module Qualtrics::API
     attribute :last_name
     attribute :first_name
     attribute :email
+    attribute :phone_number
+    attribute :country
     attribute :external_data_reference
     attribute :finished
     attribute :status

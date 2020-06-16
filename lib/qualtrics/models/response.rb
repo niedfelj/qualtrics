@@ -3,6 +3,11 @@ module Qualtrics::API
     include ::ActiveModel::Serialization
 
     attribute :id
+    attribute :raw 
+    attribute :values 
+    attribute :labels
+    attribute :displayed_fields 
+    attribute :displayed_values
     attribute :response_set
     attribute :ip_address
     attribute :start_date
@@ -11,6 +16,7 @@ module Qualtrics::API
     attribute :first_name
     attribute :email
     attribute :phone_number
+    attribute :phone_country
     attribute :country
     attribute :external_data_reference
     attribute :finished

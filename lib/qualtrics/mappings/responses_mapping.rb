@@ -18,29 +18,36 @@ module Qualtrics::API
 
         r = Response.new
         r.id                        = response["responseId"]
-
-        response = response["values"]
-        r.response_set              = response["responseSet"]
-        r.ip_address                = response["ipAddress"]
-        r.start_date                = response["startDate"]
-        r.end_date                  = response["endDate"]
-        r.last_name                 = response["recipientLastName"]
-        r.first_name                = response["recipientFirstName"]
-        r.email                     = response["recipientEmail"]
-        r.phone_number              = response["Phone Number"]
-        r.country                   = response["Country"]
-        r.external_data_reference   = response["externalDataReference"]
-        r.finished                  = response["finished"]
-        r.status                    = response["status"]
-        r.location_latitude         = response["locationLatitude"]
-        r.location_longitude        = response["locationLongitude"]
-        r.location_accuracy         = response["locationAccuracy"]
-        r.user_language             = response["userLanguage"]
-        r.distribution_channel      = response["distributionChannel"]
+        r.raw                       = response 
+        r.values                    = response["values"]
+        r.labels                    = response["labels"]
+        r.displayed_fields          = response["displayedFields"]
+        r.displayed_values          = response["displayedValues"]
+        
+        values = response["values"]
+        r.response_set              = values["responseSet"]
+        r.ip_address                = values["ipAddress"]
+        r.start_date                = values["startDate"]
+        r.end_date                  = values["endDate"]
+        r.last_name                 = values["recipientLastName"]
+        r.first_name                = values["recipientFirstName"]
+        r.email                     = values["recipientEmail"]
+        r.phone_number              = values["Phone Number"]
+        r.phone_country             = values["Phone Country"]
+        r.country                   = values["Country"]
+        r.external_data_reference   = values["externalDataReference"]
+        r.finished                  = values["finished"]
+        r.status                    = values["status"]
+        r.location_latitude         = values["locationLatitude"]
+        r.location_longitude        = values["locationLongitude"]
+        r.location_accuracy         = values["locationAccuracy"]
+        r.user_language             = values["userLanguage"]
+        r.distribution_channel      = values["distributionChannel"]
 
         r.questions = {}
-        response.keys.grep(/Q([0-9xy_]+)/).each do |key|
-          r.questions[key] = response[key]
+
+        values.keys.grep(/QID([0-9xy_]+)/).each do |key|
+          r.questions[key] = values[key]
         end
 
         responses << r

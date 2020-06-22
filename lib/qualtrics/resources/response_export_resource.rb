@@ -28,7 +28,7 @@ module Qualtrics::API
           params = { format: hash[:file_type] }
           optional_params = [:last_response_id, :start_date, :end_date, :limit,
                              :included_question_ids, :use_label, :decimal_separator,
-                             :seen_unanswered_record, :use_local_time]
+                             :seen_unanswered_record, :use_local_time, :export_responses_in_progress]
 
           optional_params.each do |optional_param|
             key = optional_param.to_s.camelize(:lower).to_sym

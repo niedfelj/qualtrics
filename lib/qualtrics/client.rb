@@ -11,6 +11,7 @@ module Qualtrics::API
 
     def connection
       Faraday.new(connection_options) do |req|
+        #req.response :logger 
         req.adapter :net_http
       end
     end

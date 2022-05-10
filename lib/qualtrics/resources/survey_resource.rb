@@ -4,6 +4,7 @@ module Qualtrics::API
 
     resources do
       action :all, "GET /API/v3/surveys" do
+        query_keys :offset 
         handler(200) do |response|
           body = JSON.parse(response.body)["result"].to_json
           SurveyMapping.extract_collection(body, :read)
